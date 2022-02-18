@@ -11,7 +11,7 @@ export class PaisService {
 
   getPaises() {
 
-    return this.http.get('https://restcountries.com/v3.1/lang/spa')
+    return this.http.get('https://restcountries.com/v2/lang/spa')
                       .pipe( 
                         map( (resp: any = [] ) => {
                           return resp.map( (pais : {name: any; alpha3Code: any;}) => {
@@ -19,9 +19,12 @@ export class PaisService {
                                nombre: pais.name,
                                codigo: pais.alpha3Code
                              }
-                          })
+                          });
                         })
                        );
-
   }
+
+
 }
+
+
