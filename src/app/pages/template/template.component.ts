@@ -10,6 +10,8 @@ export class TemplateComponent implements OnInit {
   
   usuario = {
     nombre: '', //establecer un valor por defecto al formulario
+    apellido: '',
+    correo: ''
   }
 
   constructor() { }
@@ -18,6 +20,16 @@ export class TemplateComponent implements OnInit {
   }
 
   guardar( forma: NgForm ) {
+    
+    if( forma.invalid ) {
+      Object.values( forma.controls).forEach( control => {
+        control.markAsTouched();
+      });
+      return;
+    }
     console.log("forma", forma.value);
+
   }
+
 }
+
