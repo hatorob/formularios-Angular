@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 export class TemplateComponent implements OnInit {
   
   usuario = {
-    nombre: 'Carlos', //establecer un valor por defecto al formulario
+    nombre: '', //establecer un valor por defecto al formulario
   }
 
   constructor() { }
