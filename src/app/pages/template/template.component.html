@@ -16,7 +16,7 @@
             <label class="col-2 col-form-label">Apellido</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Apellido">
+                <input class="form-control" ngModel name="apellido" [class.is-invalid]="apellido.invalid && nombre.touched" type="text" placeholder="Apellido" required minlength="2" #apellido="ngModel">
             </div>
         </div>
 
