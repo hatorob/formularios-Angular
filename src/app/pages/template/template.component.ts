@@ -13,7 +13,8 @@ export class TemplateComponent implements OnInit {
     nombre: 'Alejandro', //establecer un valor por defecto al formulario
     apellido: 'Toro',
     correo: 'alejotoro@gamial.com',
-    pais: '',
+    pais: 'COL',
+    genero: ''
   }
 
   paises: any[] = [];
@@ -29,7 +30,7 @@ export class TemplateComponent implements OnInit {
                         nombre: '[Seleccione país]',
                         codigo: ''
                       })
-                      console.log(this.paises);
+                      /* console.log(this.paises); */
                     })
 
   }
@@ -43,6 +44,7 @@ export class TemplateComponent implements OnInit {
       return;
     }
     console.log("forma", forma.value);
+    console.log("dio click")
 
   }
 
