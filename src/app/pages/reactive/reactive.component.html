@@ -8,7 +8,8 @@
             <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre">
+                <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre" [class.is-invalid]="nombreNoValido">
+                <small class="text-danger" *ngIf="nombreNoValido">Ingrese al menos 5 caracteres</small>
             </div>
         </div>
 
@@ -16,7 +17,8 @@
             <label class="col-2 col-form-label">Apellido</label>
             <div class="col-8">
 
-                <input class="form-control" type="text" placeholder="Apellido" formControlName="apellido">
+                <input class="form-control" type="text" placeholder="Apellido" formControlName="apellido" [class.is-invalid]="apellidoNoValido">
+                <small class="text-danger" *ngIf="apellidoNoValido">Ingrese al menos 2 caracteres</small>
             </div>
         </div>
 
@@ -26,7 +28,8 @@
         <label class="col-2 col-form-label">Correo</label>
         <div class="col-8">
 
-            <input class="form-control" type="email" placeholder="Correo electrónico" formControlName="correo">
+            <input class="form-control" type="email" placeholder="Correo electrónico" formControlName="correo" [class.is-invalid]="correoNoValido">
+            <small class="text-danger" *ngIf="correoNoValido">Ingrese un correo valido</small>
         </div>
     </div>
 
