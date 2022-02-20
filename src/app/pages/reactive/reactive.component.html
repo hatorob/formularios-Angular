@@ -6,7 +6,7 @@
 
         <div class="form-group row">
             <label class="col-2 col-form-label">Nombre</label>
-            <div class="col-8">
+            <div class="col">
 
                 <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre" [class.is-invalid]="nombreNoValido">
                 <small class="text-danger" *ngIf="nombreNoValido">Ingrese al menos 5 caracteres</small>
@@ -15,7 +15,7 @@
 
         <div class="form-group row">
             <label class="col-2 col-form-label">Apellido</label>
-            <div class="col-8">
+            <div class="col">
 
                 <input class="form-control" type="text" placeholder="Apellido" formControlName="apellido" [class.is-invalid]="apellidoNoValido">
                 <small class="text-danger" *ngIf="apellidoNoValido">Ingrese al menos 2 caracteres</small>
@@ -26,18 +26,31 @@
 
     <div class="form-group row">
         <label class="col-2 col-form-label">Correo</label>
-        <div class="col-8">
+        <div class="col">
 
             <input class="form-control" type="email" placeholder="Correo electrónico" formControlName="correo" [class.is-invalid]="correoNoValido">
             <small class="text-danger" *ngIf="correoNoValido">Ingrese un correo valido</small>
         </div>
     </div>
 
+    <div class="form-group row" formGroupName="direccion">
+        <label class="col col-form-label">Dirección</label>
+        <div class="form row">
 
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Distrito" formControlName="distrito">
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Ciudad" formControlName="ciudad">
+            </div>
+
+        </div>
+    </div>
+    <br>
 
     <div class="form-group row">
         <label class="col-2 col-form-label">&nbsp;</label>
-        <div class="input-group col-md-8">
+        <div class="input-group col">
             <button type="submit" class="btn btn-outline-primary btn-block">
         Guardar
       </button>
