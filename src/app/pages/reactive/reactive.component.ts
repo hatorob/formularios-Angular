@@ -16,6 +16,7 @@ export class ReactiveComponent implements OnInit {
     // Se recomienda inicializar el formgroup desde el constructor
     this.crearFormulario();
     this.cargarDataAlFormulario();
+    this.crearListenners();
   }
 
   ngOnInit(): void {
@@ -69,6 +70,14 @@ export class ReactiveComponent implements OnInit {
     }, {
       validators: this.validadores.passwordsIguales('pass1','pass2')
     });
+  }
+
+  crearListenners() {
+    this.forma.valueChanges.subscribe( valor => {
+      console.log(valor);
+    } );
+
+    this.forma.statusChanges.subscribe( status => console.log(status));
   }
 
   cargarDataAlFormulario() {
